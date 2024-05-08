@@ -35,3 +35,12 @@ Sketch is to make a maze
 and points to make an interative interface to make ponits and try to find the best closed path between them, 
 you can try downloading my rep and only change the pathing algorithm, you just need to edit the function "this.findCloser()"
 ![image](https://github.com/alexandreoli/p5.js-play/assets/57917511/f7e2bd83-adfb-4d42-a134-e39a60306623)
+
+
+estou fazendo um algoritimo de busca de caminhos, o objetivo eh chagar ao final o mais rapido possivel e nao o menor caminho
+a primeiro momento estarei utilizando um metodo heuristico proprio para teste do ambiente
+quanto mais vezes passar por um mesmo ponto, mais escuro o ponto fica para marcar que o caminho ja foi utilizado 
+
+![image](https://github.com/alexandreoli/p5.js-play/assets/57917511/3b59b959-b7b4-4c5f-a028-1b60911e7be1)
+
+

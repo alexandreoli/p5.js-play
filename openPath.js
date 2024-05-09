@@ -5,7 +5,7 @@ var mat = [];
 var current;
 
 //0 = 4.5%  __ 10 = 50%
-var densidade = 1; // de 1 a 10 representando qts % da grid sera obstaculos
+var densidade = 8; // de 1 a 10 representando qts % da grid sera obstaculos
 
 function setup() {
   createCanvas(400, 400);
@@ -58,12 +58,12 @@ Cell.prototype.findPath = function () {
   }
 
   if (xory >= 0) {
-    if (i + 1 < rows) {
-      return mat[i + 1][j].val ? mat[i + 1][j] : mat[i][j + 1];
+    if (i + 1 < rows && j + 1 < cols ) {
+      return mat[i + 1][j].val>0 ? mat[i + 1][j] : mat[i][j + 1];
       // return mat[i + 1][j];
     }
-  } else if (j + 1 < cols) {
-    return mat[i][j + 1].val ? mat[i][j + 1] : mat[i][j];
+  } else if (j + 1 < cols && i + 1 < rows) {
+    return mat[i][j + 1].val>0 ? mat[i][j + 1] : mat[i+1][j];
     // return mat[i][j + 1];
   }
 };
@@ -96,7 +96,7 @@ function Cell(i, j, val) {
       rect(x, y, w, w);
     }
     if (this.val > 0) {
-      noStroke();
+      stroke(100);
       fill(220 - (this.val - 20) * 20, 220 - (this.val - 20) * 20, 255);
       rect(x, y, w, w);
     }
